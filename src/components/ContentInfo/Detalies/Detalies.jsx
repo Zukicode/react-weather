@@ -173,7 +173,7 @@ const Detalies = () => {
 								</svg>
 							</div>
 							<p>Вітер</p>
-							<p>{Math.floor(info.wind_speed)} м/с - легкий вітер</p>
+							<p>{Math.floor(info.wind_speed)} м/с - {info.wind_speed < 6 ? 'легкий вітер' : 'сильний вітер'}</p>
 						</div>
 					</div>
 
