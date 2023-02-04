@@ -1,0 +1,13 @@
+.content_info {
+	width: calc(100% - 40px);
+	height: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 50px;
+
+	@media (max-width: 900px) {
+		flex-direction: column;
+		height: 100%;
+	}
+}

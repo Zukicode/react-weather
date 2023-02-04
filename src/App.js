@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+
+//Components
+import ContentInfo from './components/ContentInfo/ContentInfo';
+import Header from './components/Header/Header';
+
+//Redux
+import { fetchWeather, setCity } from './redux/slices/weatherSlice';
+import { useDispatch } from 'react-redux';
+
+//styles
+import './styles/app.scss';
+import './styles/normalize.scss';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const dispatch = useDispatch();
+	React.useEffect(() => {
+		if (localStorage.getItem('activeCity')) {
+			dispatch(fetchWeather(localStorage.getItem('activeCity')));
+			dispatch(setCity(localStorage.getItem('activeCity')));
+		} else {
+			dispatch(fetchWeather('Kyiv'));
+		}
+	}, []);
+	return (
+		<div className='app-wrapper'>
+			<div className='content'>
+				<Header />
+
+				<ContentInfo />
+			</div>
+		</div>
+	);
 }
 
 export default App;

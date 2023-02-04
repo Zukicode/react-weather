@@ -1,0 +1,85 @@
+.today {
+	width: calc(30% - 30px);
+	height: calc(100% - 30px);
+	background: #4F4F4F;
+	box-shadow: 2px 5px 25px -3px rgba(180, 180, 180, 0.25);
+	border-radius: 20px;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+
+	@media (max-width: 900px) {
+		width: calc(100% - 30px);
+	}
+
+	.temperature {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+
+		.text_temp {
+			h1:first-child {
+				font-family: Montserrat;
+				font-size: 96px;
+				font-weight: 500;
+				line-height: 117px;
+				letter-spacing: 0em;
+				text-align: left;
+				color: #4793FF;
+
+				@media (max-width: 1050px) {
+					font-size: 84px;
+				}
+
+				@media (max-width: 400px) {
+					font-size: 74px;
+				}
+
+				@media (max-width: 350px) {
+					font-size: 64px;
+				}
+			}
+
+			h1:last-child {
+				font-family: Montserrat;
+				font-size: 40px;
+				font-weight: 400;
+				line-height: 49px;
+				letter-spacing: 0em;
+				text-align: left;
+				color: #ffffff;
+
+				@media (max-width: 1050px) {
+					font-size: 30px;
+				}
+
+				@media (max-width: 400px) {
+					font-size: 24px;
+				}
+			}
+		}
+	}
+
+	.time_city {
+		p {
+			font-family: Montserrat;
+			font-size: 22px;
+			font-weight: 400;
+			line-height: 30px;
+			letter-spacing: 0em;
+			text-align: left;
+			color: #939CB0;
+
+			@media (max-width: 365px) {
+				font-size: 18px;
+			}
+
+			@media (max-width: 312px) {
+				font-size: 14px;
+			}
+		}
+	}
+}
